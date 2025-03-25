@@ -28,7 +28,7 @@ function compras(trabalho1, trabalho2) {
 
     return { comprarSorvete, comprarTv50, comprarTv32, manterSaudavel }; // criacao inteligente de um objeto
 }
-res
+
 console.log(compras(true, true)); // { comprarSorvete: true, comprar: true, comprarTv32: false, manterSaudavel: false }
 console.log(compras(true, false)); // { comprarSorvete: true, comprar: false, comprarTv32: true, manterSaudavel: false }
 console.log(compras(false, true)); // { comprarSorvete: true, comprar: false, comprarTv32: true, manterSaudavel: false }
