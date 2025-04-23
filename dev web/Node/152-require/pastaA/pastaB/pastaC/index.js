@@ -1,0 +1,1 @@
+this.ola = function() { console.log('modulo da pasta C')}
