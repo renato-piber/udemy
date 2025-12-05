@@ -4,11 +4,9 @@ function gerarNumeroEntre(min, max) {
     }
 
     return new Promise(resolve => {
-        setTimeout(() => {
             const fator = max - min + 1
             const aleatorio = parseInt(Math.random() * fator) + min
             resolve(aleatorio)
-        }, 1000)
     })
 }
 

@@ -32,7 +32,7 @@ let obterAlunos = async () => { // é preciso marcar a funcao com a palavra asyn
     return [].concat(ta, tb, tc); // concatena os arrays
 }   // retorna um objeto AsyncFunction
 
-obtenerAlunos() // chama a funcao
+obterAlunos() // chama a funcao
     .then(alunos => alunos.map(a => a.nome)) // mapeia os alunos para pegar apenas os nomes
     .then(nomes => console.log(nomes)) // imprime os nomes
     .catch(e => console.log(e.message)); // se der erro, ele vai para o catch, que recebe o argumento como erro

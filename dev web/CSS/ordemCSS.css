@@ -1,0 +1,65 @@
+/* 
+1. Layout e posicionamento
+display
+position
+top / right / bottom / left
+z-index
+flex / grid / float
+
+2. Box model
+width / height
+margin
+padding
+border
+box-sizing
+
+3. Tipografia
+font-family
+font-size
+font-weight
+line-height
+letter-spacing
+text-align
+color
+
+4. Visual (cores, fundo, sombras, etc.)
+background / background-color
+box-shadow
+opacity
+
+5. Interações e efeitos
+transition
+transform
+animation
+cursor
+
+6. Misc
+overflow
+visibility
+pointer-events
+*/
+
+.meu-botao {
+    /* layout */
+    display: inline-block;
+    position: relative;
+    /* box model */
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    padding: 12px 20px;
+    border: none;
+    box-sizing: border-box;
+    /* tipografia */
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    /* visual */
+    background-color: royalblue;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    /* interaoces e efeitos */
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}

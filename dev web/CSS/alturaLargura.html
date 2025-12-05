@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Altura e Largura</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        /* por padrao: o body nao ocupa a altura toda */
+        body {
+            background-color: coral;
+            height: 100%;
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+        /* o span ignorou as propriedadesd de tamanho pois é inline 
+        e valores percentuais levam em referencia o tamanho dos parents, como as tags body e html eram mt pequenas, a tag div nao sofria alteracoes
+        */
+        span, div {
+            font-size: 40px;
+            width: 50%;
+            height: 50%;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div>Título</div> 
+    <span>Subtítulo</span>
+</body>
+
+</html>

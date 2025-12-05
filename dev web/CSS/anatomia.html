@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomia CSS</title>
+    <style>
+        /* 1 passo: seletor */
+
+        .seletor {
+            /* 2 passo: propriedades (podem possuir diversas formas) */
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            /* multiplos valores */
+            border: solid 5px rgb(0, 0, 128);
+            /* shorthand property */
+            font-family: Helvetica, monospace;
+            /* alternativa */
+            /* funcoes */
+            width: calc(100% - 40px);
+            background-color: rgb(34, 153, 189);
+        }
+
+        /* usando uma pseudo classe => usada para configurar eventos*/
+        .seletor:hover {
+            background-color: orangered;
+        }
+
+        /* usando um pseudo elemento */
+        .seletor::first-letter {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        /* padrao de nomenclatura? */
+        /* dash-case ou camelCase? => oq importa é manter um PADRAO, pois a leva a organizacao*/
+
+    </style>
+</head>
+
+<body>
+    <div class="seletor">Conteúdo</div>
+</body>
+
+</html>

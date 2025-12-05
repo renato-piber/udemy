@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Media Query</title>
+    <style>
+        div {
+            font-size: 40px;
+            margin: 20px;
+            padding: 20px;
+            background-color: coral;
+            border: solid 5px;
+            visibility: hidden;
+            opacity: 0;
+            /* esta invisivel, mas ainda esta la */
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        }
+
+        @media (max-width: 600px) {
+            .muito-pequeno {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        /* aqui é tipo um teste or */
+        @media (max-width: 1000px),
+        (orientation: portrait)
+        /* orientacao retrato */
+            {
+            .pequeno-retrato {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        @media (min-width: 500px) and (max-width: 1200px) {
+            .intervalo {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="muito-pequeno">Muito Pequeno</div>
+    <div class="pequeno-retrato">Pequeno ou Retrato</div>
+    <div class="intervalo">Intervalo</div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        /* 
+        * : atributo geral
+        elem : nome do elemento
+        .classe : acessa o elemento com a determinada classe
+        [prop=valor] : acessa o elemento com a determinada propriedade
+        #id : acessa o elemento com o determinado id
+        elem + elem (p + ul) : acessa o irmao direto
+        elem ~ elem (p ~ ol) : acessa o irmao nao direto
+        elem > elem : acessa o filho direto
+        elem elem : acessa o filho nao direto
+        span:nth-child(1) : primeiro filho de algm que seja um span
+        section > :nth-child(odd) : todos os filhos impares de uma section
+        section > span:nth-of-type(2) : segubndo filho do tipo span
+        */
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

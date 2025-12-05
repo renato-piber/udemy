@@ -11,6 +11,7 @@
 //     }, 2000)
 // }, 2000);
 
+// evitando callback hell
 function esperarPor(tempo = 2000) {
     return new Promise(function (resolve) {
         setTimeout(() => {

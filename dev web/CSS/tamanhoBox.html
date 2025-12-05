@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tamanho Box</title>
+    <style>
+        /* * { box-sizing: border-box;} ==> so é transmitido via heranca pelo elmento geral*/
+        body {
+            font-size: 45px;
+        }
+        div {
+            background-color: deepskyblue;
+            width: 100%;
+            height: 300px;
+            padding: 100px;
+            border: solid 25px;
+            box-sizing: border-box;
+            /* 
+            content-box: somente o tamanho do conteudo é considerado
+            border-box: o tamanho é considerado desde o conteudo ate a borda
+            */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        O tamanho do Box é...
+    </div>
+</body>
+</html>

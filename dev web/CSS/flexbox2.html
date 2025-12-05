@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #02</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        div {
+            border: 2px solid blue;
+        }
+        .flex-container {
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+        .flex-container div:nth-child(4) {
+            background-color: indianred;
+            order: 1; /* todos os elementos tem ordem 0, os elementos com ordme maior sao exibidos por ultimo */
+            order: -1;
+            align-self: center; /* alinha o elemento no container */
+            align-self: flex-end;
+            align-self: flex-start;
+            align-self: stretch;
+        }
+
+        .flex-container div {
+            width: 100px;
+            /* flex-grow: é uma forma de preencher o espaco que sobrou no flex-container, ele divide o tamanho do espaco pela soma dos pesos de cada elemento, e dps soma o quociente ao tamanho de cada item */
+            flex-grow: 0;
+            flex-grow: 1;
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-grow: 2;
+        }
+
+        .flex-container {
+            width: 300px;
+            /* é tipo o grow, mas nesse caso, o shrink faz encolher */
+            flex-shrink: 1;
+        }
+
+        .flex-container div:nth-child(1) {
+            flex-shrink: 5;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="flex-container nolabel">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

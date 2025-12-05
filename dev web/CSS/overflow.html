@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Overflow</title>
+    <style>
+        div {
+            /* 
+            o valor so estrapola qnd o tamahno do elemento é fixo
+            */
+            font-size: 40px;
+            height: 100px;
+            width: 260px;
+            border: solid 3px;
+            overflow: scroll;
+            /* 
+            hidden: tudo o que sair pra fora fica escondido
+            scroll(-x ou y): abre uma barra de scroll 
+            */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        TudoFuncionaMuitoBemEmCSS!!!
+        Texto muito grande para caber nessa div.
+        Já pensou qual será o comportamento padrão?
+    </div>
+</body>
+</html>
