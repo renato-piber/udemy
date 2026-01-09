@@ -39,6 +39,6 @@ Promise.all([getTurma('A'), getTurma('B'), getTurma('C')]) // aqui as tres chama
     .then(turmas => [].concat(...turmas)) // o spread operator concatena os arrays
     .then(alunos => alunos.map(a => a.nome)) // mapeia os alunos para pegar apenas os nomes
     .then(nomes => console.log(nomes))
-    // .catch(e => console.log(e.message)); // se der erro, ele vai para o catch, que recebe o argumento como erro
+    .catch(e => console.log(e.message)); // se der erro, ele vai para o catch, que recebe o argumento como erro
 
 getTurma('D').catch(e => console.log(e.message)); // se der erro, ele vai para o catch, que recebe o argumento como erro

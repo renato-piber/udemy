@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #04</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>Início</p>
+    </div>
+    <div>
+        <ul>
+            <li>Pedro</li>
+            <li>Ana</li>
+            <li>Bia</li>
+        </ul>
+    </div>
+    <div>
+        <p>Fim</p>
+    </div>
+    <script>
+        function log() {
+            console.log(this)
+        }
+
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const lista = document.querySelector('div ul')
+        lista.parentNode.log() // atraves dessa ul, conseguimos chegar no pai dela [a div], graças a estrutura de arvore do Node
+        lista.childNodes.log() // mostra os filhos da ul, incluindo os nós (aparece os textos no resultado)
+
+        const primeiro = lista.firstChild
+        primeiro.log()
+        primeiro.nextSibling.log() // pega o proximo no/irmao (independente do tipo)
+
+        const ultimo = lista.lastChild
+        ultimo.log()
+        ultimo.previousSibling.log() // pega o irmao anterior
+
+        lista.children.log() // pega as tags de fato
+        lista.firstElementChild.log() // mostra o primeiro elemento que foi definido de fato (comportamento mais "interessante")
+        lista.lastElementChild.log()
+        lista.parentNode.previousElementSibling.log() // pega o ELEMENTO HTML (e nao o proximo nó) anterior ao pai
+        lista.parentNode.nextElementSibling.log()
+
+        document.querySelectorAll('div ul li').log() // esse seria o "ideal" => nao é bom ficar navegando dentro dos nos do DOM
+    </script>
+</body>
+
+</html>

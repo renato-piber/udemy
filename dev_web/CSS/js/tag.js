@@ -3,7 +3,7 @@ const colors = {
     div: '#1565c0',
     span: '#e53935',
     section: '#f67809',
-    ul: '5e35b1',
+    ul: '#5e35b1',
     ol: '#fbc02d',
     header: '#d81b60',
     nav: '#64dd17',

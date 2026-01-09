@@ -38,17 +38,17 @@
             /* linhas */
             grid-template-rows: 50% 25% 12.5% 12.5%;
             grid-template-rows: 100px 1fr; /* o resto das linhas pega o que restou */
-            grid-template-rows: 100px auto; /* pega o resto e distribui de forma igualitaria */
+            grid-template-rows: 50px auto; /* pega o resto e distribui de forma igualitaria */
         }
 
         .d8 {
             grid-column-start: 2;
             grid-column-end: 4;
-            grid-column-end: span 2; /* ocupe das colunas */
+            grid-column-end: span 2; /* ocupe duas colunas */
             grid-row-start: 3;
             grid-row-end: 5;
             grid-row-end: 5;
-            grid-row-end: span 2;
+            grid-row-end: span 2; /* ocupe duas linhas */
         }
 
         .d10, .d11 {
@@ -59,7 +59,7 @@
         }
 
         .d10 {
-            z-index: 10; /* profundidade dos elementos */
+            z-index: 1; /* profundidade dos elementos */
         }
     </style>
 </head>

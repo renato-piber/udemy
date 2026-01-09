@@ -1,5 +1,5 @@
 // CLOSURE == escopo criado quando uma funcao e declarada
-// esse escopo permite a funcao acessar e manipular variaveis externar a funcao
+// esse escopo permite a funcao acessar e manipular variaveis externas a funcao
 
 const x = 'global'
 

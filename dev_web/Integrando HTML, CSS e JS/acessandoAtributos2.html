@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <!-- atributos personalizados podem/devem ter o prefixo 'data-', isso permite um tratamento diferente  -->
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log("Elemento 'ul'...........")
+        console.log('childNodes', lista.childNodes)
+        console.log('id', lista.id)
+        console.log('destino', lista.destino) // n mostra pq é um atributo personalizado (as vezes o browser ignora)
+        console.log('destino => getAttribute', lista.getAttribute('destino')) // essa funcao considera propriedades personalizadas
+        console.log('hasAttribute', lista.hasAttribute('destino')) // verifica se tem aquele atributo
+        lista.setAttribute('destino', 'empresa') // define atributos
+        console.log('destino => getAttribute', lista.getAttribute('destino'))
+        lista.setAttribute('status', 'aberto')
+        lista.removeAttribute('destino') // remove atributos
+        console.log(lista.dataset.urgencia) // mostra os atributos com o prefixo data-
+        lista.dataset.urgencia = 4
+        console.log(lista.getAttribute('data-urgencia'))
+
+        const label = document.querySelector('label')
+        console.log(label.for) // isso nao funciona pq 'for' é uma palavra reservada da linguagem
+        console.log(label.htmlFor) // com a notacao ponto, é necessario utilzar html antes
+        console.log(label.getAttribute('for')) // ja com a funcao get, apenas o nome do atributo mesmo
+    </script>
+</body>
+
+</html>
