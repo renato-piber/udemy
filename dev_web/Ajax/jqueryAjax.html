@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Ajax com jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/jquery.js"></script> 
+</head>
+
+<body class="conteudo exercicio">
+    <h1>jQuery Get/Post</h1>
+    <div id="get"></div>
+    <div id="post"></div>
+
+    <script>
+        // tem que importar tb
+
+        function exibirResultado(id, dados) {
+            const texto = JSON.stringify(dados) // converte o obj json pra uma string
+            document.getElementById(id).innerHTML = texto
+        }
+        
+        $.ajax({ // o jQuery é referenciado com $, mas tb funciona com jQuery
+            url: 'parOuImpar',
+            data: {
+                numero: 5
+            },
+            success(data) {
+                exibirResultado('get', data)
+            }
+        })
+
+        jQuery.ajax({
+            url: 'formulario',
+            method: 'post',
+            data: {
+                nome: 'Joao',
+                sobrenome: 'Silva'
+            },
+            success(data) {
+                exibirResultado('post', data)
+            },
+            error(e) {
+                exibirResultado('post', e)
+            }
+        })
+    </script>
+</body>
