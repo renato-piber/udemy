@@ -1,16 +1,18 @@
-// esse arquivo sera interpretado pelo node, assim, usaremos a escrita que o node entende
-const modoDev = process.env.NODE_ENV !== 'production' // pega a variavel de ambiente alterada para saber o mode do webpack
+const modoDev = process.env.NODE_ENV !== 'production'
 const webpack = require('webpack')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin") // plugin que extrai o css para um arquivo externo
-const TerserPlugin = require('terser-webpack-plugin') // minificador js
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin') // minificador css
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const TerserPlugin = require('terser-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
     mode: modoDev ? 'development' : 'production',
     entry: './src/principal.js', // inicio do sistema de modulos
     output: {
-        filename: "principal.js", // nome do arquivo de saida
-        path: __dirname + '/public' // __dirname aponta para a raiz. pasta para onde o build sera enviado
+        filename: "assets/js/principal.js", // nome do arquivo de saida
+        path: __dirname + '/public', // __dirname aponta para a raiz. pasta para onde o build sera enviado
+        clean: true
     },
     devServer: {
         static: {
@@ -34,7 +36,17 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "estilo.css" // nome do arquivo gerado a partir da interpretacao dos arquivos CSS's
+            filename: "assets/css/estilo.css" // nome do arquivo gerado a partir da interpretacao dos arquivos CSS's
+        }),
+        // html index
+        new HtmlWebpackPlugin({
+            template: './src/index.html'
+        }),
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: 'src/paginas', to: 'paginas' },
+                { from: 'src/assets/imgs', to: 'assets/imgs' }
+            ]
         })
     ],
     module: {
@@ -47,14 +59,7 @@ module.exports = {
                     'css-loader', // interpreta @import, url()...
                     'sass-loader'
                 ]
-            }, {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'assets/[name][ext]'
-                }
             }
-
         ]
     }
 }
