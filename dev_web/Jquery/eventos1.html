@@ -20,6 +20,34 @@
     <input type="text" placeholder="Cor de Background">
 
     <script>
-        // ...
+        function mostrarPosicaoMouse(e) {
+            $('#posicao').html(`x: ${e.clientX} y: ${e.clientY}`)
+        }
+        $('body').on('mousemove', mostrarPosicaoMouse) // o evento .on() permite registrar uma funcao qnd um evento acontece
+
+        $('#posicao').mouseover(e => {
+            $('body').off('mousemove', mostrarPosicaoMouse) // remove o registro de uma funcao a um evento
+        })
+
+        $('#posicao').mouseleave(e => {
+            $('body').mousemove(mostrarPosicaoMouse)
+        })
+
+        let cliques = 0
+        $('body').click(e => {
+            $('#cliques').html(`Clique: ${++cliques}`)
+        })
+
+        const backgroundOriginal = $('body').css('background-color')
+
+        // this???
+        $('input').keyup(function (e) { // o uso de arrow function ou uma function normal depende tb do uso do "this"
+            const valor = $(this).val() // a funcao val do jQuery pega o valor atual dp input
+            if (valor.match(/#[\da-fA-F]{3,6}/)) { // testa se a cor inserida é valida | match() => método de string em JavaScript que serve pra procurar padrões usando regex dentro de um texto.
+                $('body').css('background-color', valor)
+            } else {
+                $('body').css('background-color', backgroundOriginal)
+            }
+        })
     </script>
 </body>

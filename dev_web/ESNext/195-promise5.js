@@ -3,7 +3,7 @@
 function funcionarOuNao(valor, chanceErro) {
     return new Promise((resolve, reject) => {
         try{
-            con.log('tempo')
+            console.log('tempo')
             if (Math.random() < chanceErro) {
                 reject('Ocorreu um erro!')
             } else {

@@ -28,6 +28,80 @@
     <div>Animar!</div>
 
     <script>
-        // ...
+        // function alterarLargura(valor, duracao, callback) {
+        //     $('div').animate({ width: `+=${valor}` }, duracao, callback) // += ja atualiza no valor atual o tamanho do elemento
+        // }
+
+        // function moverDiagonal(valor, duracao, callback) {
+        //     $('div').animate({ top: `+=${valor}`, left: `+=${valor}` }, duracao, callback)
+        // }
+
+        // function girar(valor, duracao, callback) {
+        //     $('div').animate({ transform: `+=${valor}` }, {
+        //         step: function (valor) { // vai incrementar a cada iteracao ate o valor total
+        //             $(this).css('transform', `rotate(${valor}deg)`)
+        //         },
+        //         duration: duracao
+        //     }, 'linear', callback)
+        // }
+
+        // alterarLargura(300, 1000, () => {
+        //     alterarLargura(-300, 'slow', () => {
+        //         moverDiagonal(300, 1000, () => {
+        //             girar(3300, 100)
+        //         })
+        //     })
+        // })
+
+        // com promises
+        function alterarLargura(valor, duracao, callback) {
+            return new Promise(resolve => {
+                $('div').animate({ width: `+=${valor}` }, duracao, resolve) // += ja atualiza no valor atual o tamanho do elemento
+            })
+        }
+
+        function moverDiagonal(valor, duracao, callback) {
+            return new Promise(resolve => {
+                $('div').animate({ top: `+=${valor}`, left: `+=${valor}` }, duracao, resolve)
+            })
+        }
+
+        function girar(valor, duracao, callback) {
+            return new Promise(resolve => {
+                $('div').animate({ transform: `+=${valor}` }, {
+                    step: function (valor) { // vai incrementar a cada iteracao ate o valor total
+                        $(this).css('transform', `rotate(${valor}deg)`)
+                    },
+                    duration: duracao
+                }, 'linear', resolve)
+            })
+        }
+
+        // alterarLargura(300, 1000)
+        //     .then(() => alterarLargura(-300, 1000))
+        //     .then(() => moverDiagonal(300, 1000))
+        //     .then(() => girar(3300, 3000))
+
+        
+        // function promises() {
+        //     return new Promise.all([
+        //         alterarLargura(300, 1000), //        isso nao 
+        //         alterarLargura(-300, 1000),//        funcionao pq o jQuery 
+        //           moverDiagonal(300, 1000),//        executa as animacoes em 
+        //                girar(3300, 3000)   //        serie e nao em paralelo
+        //     ])
+        // }
+
+        //promises()
+
+        // async/await
+        async function teste() {
+            await alterarLargura(300, 1000)
+            await alterarLargura(-300, 250)
+            await moverDiagonal(500, 500)
+            await girar(3300, 1000)
+        }
+
+        teste()
     </script>
 </body>

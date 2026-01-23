@@ -22,6 +22,24 @@
     </div>
 
     <script>
-        // ...
+        (function ($) { // forma de garantir q a variavel $ seja o jQuery
+            $.fn.interpretar = function () {
+                const retirarChaves = s => s.substring(2, s.length - 2) // essa expressao é pra pegar as expressoes com double mustaches
+                const conteudo = $(this).html()
+                const expressoesComChaves = conteudo.match(/\{\{.+\}\}/g)
+                const expressoes = expressoesComChaves.map(retirarChaves)
+                const resultados = expressoes.map(e => eval(e)) // é tipo um interpretador de JavaScript em tempo real. Ele pega uma string e executa como se fosse código JS de verdade. Mas é bom ter cuidado, por questoes de seguranca, e nao acabar executando nenhum codigo malicioso
+
+                let conteudoFinal = conteudo
+                for (let i = 0; i < expressoesComChaves.length; i++) {
+                    conteudoFinal = conteudoFinal.replace(
+                        expressoesComChaves[i], resultados[i]
+                    )
+                }
+                $(this).html(conteudoFinal)
+            }
+        })(jQuery)
+
+        $('div').interpretar()
     </script>
 </body>
