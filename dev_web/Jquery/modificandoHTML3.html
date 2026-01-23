@@ -19,7 +19,26 @@
             { nome: 'Carlos', nota: 7.6 },
             { nome: 'Julia', nota: 9.7 }
         ]
-        
-        // ...
+
+        // minha solucao
+        $('#conteudo').html($('<table id="tabela">').css('border', 'solid 5px'))
+        pessoas.forEach(p => $('#tabela').append($('<tr>').append($('<td>').text(`${p.nome}`), `<td>${p.nota}</td>`)))
+
+        // solucao do curso     
+        $(function () { // assim tb executa o jquery qnd o documento esta pronto
+
+        })
+        $(document).ready(function () { // sinaliza que td o documento foi carregado e esta pronto para mexer e ajuda a fugir do escopo global
+            const linhas = pessoas.map(p => {
+                const tdNome = $('<td>').html(p.nome)
+                const tdNota = $('<td>').html(p.nota)
+                return $('<tr>').append(tdNome, tdNota)
+            })
+
+            const tabela = $('<table>').append(linhas)
+                .css('border', 'solid 5px')
+
+            $('#conteudo').append(tabela)
+        })
     </script>
 </body>

@@ -49,6 +49,26 @@
     </form>
 
     <script>
-        // ...
+        // adicionando classes
+        // document.querySelector('#feira').classList.add('destaque') // com DOM
+        $('#feira').addClass('destaque').removeClass('destaque')
+        $('li').addClass('destaque')
+        $('[wm-obrigatorio]').removeClass('destaque')
+        $('li.opcional').removeClass('destaque')
+        $('div p span').addClass('destaque')
+                        
+        // Exclusivos jQuery
+        $('li:first').css('border', 'solid 3px black') // primeiro elemento do tipo li
+        $('li:odd').css('border', 'solid 10px orange') // elementos impares
+        $('li:gt(1)').css('border', 'solid 10px white') // indice maior que 1
+        $('li:not(:last)').css('border', 'none') // que nao seja o ultimo
+        $('li:contains("r")').css('background-color', 'black') // que contenha a letra 'r'
+        
+        $('form * ').hide()
+        $('form :text').show()
+        $('form :password').show()
+        $('form :checkbox').show()
+        $('form :radio').show()
+        $('form :file').show()
     </script>
 </body>

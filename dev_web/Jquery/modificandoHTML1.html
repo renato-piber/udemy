@@ -13,8 +13,34 @@
     <div id='conteudo1'></div>
     <div id='conteudo2'></div>
     <div id='conteudo3'></div>
+    <div>Sem ID</div>
+
 
     <script>
-        // ...
+        // conteudo 1
+        // const p = document.createElement('p')
+        // p.textContent = '1'
+        // document.querySelector('#conteudo1').appendChild(p)
+        $('#conteudo1').append('<p>1</p>')
+
+        // conteudo 2
+        const elementos = [
+            $('<li></li>').append('Arroz'), // criando elementos com jQuery
+            $('<li>').append('Feijao'), // $('<li>') != $('li')
+            $('<li>').append('Carne')
+        ]
+
+        const lista = $('<ul><li>Sorvete</li></ul>')
+            .prepend(elementos) // prepend() adiciona antes dentro do que ja existe dentro da lista
+        $('#conteudo2').append(lista)
+
+        // conteudo 3
+        $('#conteudo3').append(['<h1>1</h1>', '<h2>2</h2>'])
+            .prepend('<h1>0</h1>')
+        $('#conteudo3').html('<h1>123</h1>') // a funcao html substitui tudo oq existe dentro daquele elemento (e como se fosse innerHTML)
+        $('#conteudo3').text('<h1>123</h1>') // nao interpreta como uma tag
+
+        // Alterando todos
+        $('div[id]').html('<strong>Todos!</strong>')
     </script>
 </body>

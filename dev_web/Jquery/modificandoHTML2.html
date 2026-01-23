@@ -17,6 +17,38 @@
     <p class='numero'>5</p>
 
     <script>
-        // ...
+        $('#div1').append(', 2')
+        $('#div1').prepend('0, ')
+
+        $('<span>, 3</span>').appendTo('#div1') // append de uma forma diferente (1.conteudo 2.aonde appendar)  => desse jeito tem q deixar bem claro oq vc esta querendo adicionar
+        $('<span>-1, </span>').prependTo('#div1')
+
+        // --------------------------------------------------------------//
+
+        $('#div2').before('<p>Antes 2</p>') // const div = document.querySelector('#div2'); div.insertAdjacentHTML('beforebegin', '<p>Antes Inicio</p>')
+        $('#div2').after('<p>Depois 2</p>')
+
+        // --------------------------------------------------------------//
+
+        $('<p>Antes 3</p>')
+            .addClass('destaque')
+            .insertBefore('#div3') // insere primeiro oq vc quer inserir e depois aonde que vc quer adicionar
+        $('<p>Depois 3</p>').addClass('destaque').insertAfter('#div3')
+
+        // --------------------------------------------------------------//
+
+        //$('p.numero').wrap('<div>') // envolve cada p com uma div
+        $('p.numero').wrapAll('<div id="div4">')
+        $('#div4').empty() // exclui tudo que existe dentro do elemento (display: none)
+        $('#div3, #div4').prev().remove() // pega a div 3 e 4 e remove da DOM os elemetnos anteriores a cada uma   
+
+        // --------------------------------------------------------------//
+
+        //$('body > p').html('<div>Substituto</div>') // substitui apenas o conteudo interno, a tag "pai" continua existindo
+        //$('<div>Substituto</div>').replaceAll('body > p') // pega todos os p diretamente dentro do body e troca todo o elemento 
+        //$('body > p').replaceWith('<div>Substituto</div>') // o resultado é o mesmo do replaceAll
+        $('body > p').replaceWith(function () { // podemos colocar uma funcao dentro do replaceWith
+            return $('<div>').html($(this).html()).append('!!!') // aqui esta criando uma div, utilizando a 1ª funcao html para mudar o conteudo dessa div e a 2ª funcao html para recebe os conteudos das tags p => meio parecido com a funcao wrap | usar a callback permite um pouco mais de flexibilidade
+        })
     </script>
 </body>
