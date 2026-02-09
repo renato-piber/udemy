@@ -24,7 +24,7 @@ const upload = multer({ storage })// usa a configuracao do storage
     ('arquivo') // é o nome do input, "o campo que contem o arquivo, se chama arquivo"
 
 app.post('/upload', (req, res) => {
-    upload(req, res, err => {
+    upload(req, res, err => { 
         if (err) {
             return res.end('Ocorreu um erro.')
         }

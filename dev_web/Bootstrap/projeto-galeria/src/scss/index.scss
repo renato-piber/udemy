@@ -1,0 +1,6 @@
+@import "~bootstrap/scss/bootstrap"; /* o ~ quer dizer que vai procurar dentro de node_modules */
+
+$fa-font-path: "~font-awesome/fonts"; /* altera o local de uma variavel do scss do font awesome (onde que ele vai encontrar as fontes */
+@import "~font-awesome/scss/font-awesome"; /* importando a variavel que a gente alterou aqui em cima */
+
+@import "custom";
