@@ -1,0 +1,11 @@
+melhorar a questao das imagens
+ha dois metodos de empacota-las para o bundle final
+
+a ideia é: criar um plugin que importe as imagens e crie os elementos com as respectivas fotos e cidades
+
+é necessario tb, pelo oq eu acho, mudar tb o plugin dos botoes, devido a ordem implicita da execucao das pagina e funcoes
+(
+    app -> ajax -> imgs -> botoes 
+)
+
+o plugin botoes precisa das informacoes dos elementos que contem as imagens. por isso, o plugin de imagens precisa ser executado primeiro
