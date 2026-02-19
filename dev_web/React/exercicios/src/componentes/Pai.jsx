@@ -1,8 +1,9 @@
 // import Filho from "./Filho"
 
+import { useState } from "react"
 import { childrenWithProps } from "../utils/utils"
 
-export default props =>
+export const Pai = props =>
     <>
         <h1>{props.nome} {props.sobrenome}</h1>
         <h2>Filhos</h2>
@@ -13,5 +14,17 @@ export default props =>
             {/* {props.children} */} {/* aqui esta dizendo exatamente o ponto no qual eu quero que os componentes sejam renderizados */}
 
             {childrenWithProps(props)} {/* forma para nao repetir a codigo de heranca de propriedades */}
+
         </ul>
     </>
+
+// usando render prop
+export const PaiRender = ({ children }) => {
+    const sobrenome = "Piber"
+    return (
+        <>
+            <ul>{children(sobrenome)}</ul>
+        </>
+    )
+}
+
