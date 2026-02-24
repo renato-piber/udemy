@@ -50,8 +50,7 @@ const Calculator = () => {
 
     function addDigit(n) {
         if (n === "." && state.displayValue.includes(".")) return /* evitar dois pontos */
-        const clearDisplay = state.displayValue === "0"
-            || state.clearDisplay /* aqui permite n acumular os zeros e zerar o display */
+        const clearDisplay = state.displayValue === "0" || state.clearDisplay /* aqui permite n acumular os zeros e zerar o display */
 
         const currentValue = clearDisplay ? "" : state.displayValue // aqui acumula os numeros e reseta 
 
@@ -63,7 +62,6 @@ const Calculator = () => {
 
         // atualiza o values
         if (n !== ".") {
-
             const i = state.current
             const newValue = parseFloat(displayValue)
             const values = [...state.values]
