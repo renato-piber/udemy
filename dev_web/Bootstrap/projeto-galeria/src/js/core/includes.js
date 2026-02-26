@@ -6,7 +6,7 @@ export function onLoadHtmlSuccess(callback) {
     if (!loadHtmlSuccessCallbacks.includes(callback)) {
         loadHtmlSuccessCallbacks.push(callback)
     }
-}
+} 
 
 function loadIncludes(parent) {
     if (!parent) parent = 'body' // caso o parent venha vazio, vamos setá-lo para procurar no body inteiro

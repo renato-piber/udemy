@@ -1,0 +1,17 @@
+aside.logo {
+    background-color: var(--bg-dark); /* custom properti inicializada em app.css */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside.logo img {
+    padding: 0px 14px;
+    width: 100%;
+}
+
+@media(max-width: 576px) {
+    aside.logo img {
+        width: 350px;
+    }
+}

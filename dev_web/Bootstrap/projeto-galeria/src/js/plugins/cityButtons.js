@@ -14,7 +14,7 @@ function filterByCity(city) {
                 $(this).parent().addClass('d-none')
             })
         }
-    })
+    }) 
 } 
 
 $.fn.cityButtons = function () {

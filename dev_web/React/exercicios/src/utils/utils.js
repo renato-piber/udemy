@@ -6,3 +6,4 @@ export function childrenWithProps(props) {
         return cloneElement(child, { ...props, ...child.props }) /* (elemento a ser clonado, propriedades a serem herdadas por ele) */
     })
 }
+ 

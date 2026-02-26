@@ -6,7 +6,7 @@
         if(!link) return
 
         const destino = document.querySelector('[wm-link-destino]')
-
+ 
         const url = hash.substring(1)
         fetch(url)
             .then(resp => resp.text())
