@@ -1,0 +1,9 @@
+/* .roxo {
+    height: 100%;
+    color: white;
+} */
+
+.roxo h1 { /* seletores puros tem pelo menos classe ou id, somente h1 nao pode no modularizado (apenas no global pode) */
+    font-size: 40px;
+} 
+

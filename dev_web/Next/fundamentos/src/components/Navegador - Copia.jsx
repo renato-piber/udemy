@@ -1,0 +1,17 @@
+import Link from "next/link"
+import styles from "../styles/Navegador.module.css"
+
+function Navegador(props) {
+    return (
+        <div>
+            <Link href={props.destino}>
+                <div className={styles.navegador} style={{backgroundColor: props.cor ?? 'dodgerblue'}}>
+                    {props.texto}
+                </div>
+            </Link>
+
+        </div>
+    )
+}
+
+export default Navegador
