@@ -1,5 +1,5 @@
 import styles from "./Estiloso.module.css" /* é recomendado que o css module fique na mesma pasta que a page, mas não é obrigatorio */
-import Layout from "../../components/Layout"
+import Layout from "@/components/Layout"
 
 export default function Estiloso() {
     return (

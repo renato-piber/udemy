@@ -1,5 +1,4 @@
-
-import Layout from "../../components/Layout";
+import Layout from "@/components/Layout";
 
 /* essa aula ele so quis mostrar o fato de poder referenciar a pasta e nao o arquivo */
 

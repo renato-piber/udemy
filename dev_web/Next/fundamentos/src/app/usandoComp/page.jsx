@@ -1,5 +1,5 @@
-import Cabecalho from "../../components/Cabecalho";
-import Layout from "../../components/Layout"
+import Layout from "@/components/Layout"
+import Cabecalho from "@/components/Cabecalho"
 
 function App() {
     return (
@@ -11,7 +11,6 @@ function App() {
                 <Cabecalho titulo="Next.js & React" />
                 <Cabecalho titulo="Aprenda Next na prática" />
             </div>
-
         </Layout>
 
 

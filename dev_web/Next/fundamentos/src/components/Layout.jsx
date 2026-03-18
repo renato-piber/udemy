@@ -9,8 +9,8 @@ function Layout(props) {
                 <Cabecalho {...props} />
                 <Link href="/">Voltar</Link> {/* dento de Link um <a> é gerado */}
             </div>
-            <div className={styles.conteudo}>
-                <div>
+            <div className={styles.container}>
+                <div className={styles.conteudo}>
                     {props.children}
                 </div>
             </div>

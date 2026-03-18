@@ -1,4 +1,4 @@
-import Layout from "../../components/Layout"
+import Layout from "@/components/Layout"
 
 export default function Jsx() {
     /* fora do return é js */

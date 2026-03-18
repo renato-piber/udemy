@@ -22,12 +22,12 @@
     border-radius: 5px;
 }
 
-.conteudo {
+.container {
     padding: 25px;
     height: 100%;
 }
 
-.conteudo div {
+.conteudo {
     height: 100%;
     color: white;
     background-color: rgba(64, 0, 255, 0.652);

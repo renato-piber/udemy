@@ -9,7 +9,6 @@ function Navegador(props) {
                     {props.texto}
                 </div>
             </Link>
-
         </div>
     )
 }
