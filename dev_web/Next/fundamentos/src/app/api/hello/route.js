@@ -1,7 +1,15 @@
-export async function GET(req) {
+export async function GET(request) {
+    // usando query params
+    const { searchParams } = new URL(request.url)
+    
+    const nome = searchParams.get("nome")
+    const id = searchParams.get("id")
+
     return Response.json({
         name: 'Teste API',
-        metodo: req.method
+        metodo: request.method,
+        nome: nome,
+        id: +id
     })
 }
 
