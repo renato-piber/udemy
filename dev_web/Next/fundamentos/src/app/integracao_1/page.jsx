@@ -1,0 +1,43 @@
+"use client"
+
+import { useState } from "react"
+import Layout from "../../components/Layout"
+
+export default function Integracao() {
+
+    const [cliente, setCliente] = useState({})
+    const [codigo, setCodigo] = useState(1)
+
+    // sem async
+    /* function obterCliente() {
+        fetch(`http://localhost:3000/api/clientes/${codigo}`)
+            .then(resp => resp.json())
+            .then(dados => setCliente(dados))
+    } */
+
+    async function obterCliente() {
+        const resp = await fetch(`http://localhost:3000/api/clientes/${codigo}`)
+        const dados = await resp.json()
+        setCliente(dados)
+    }
+
+    return (
+        <Layout titulo="Integracao 1">
+            <div>
+                {/* 
+                controlled component: o react tem controle total do valor daquele campo, e nao o navegador 
+                oq aparece dentro desse input eh apenas um reflexo da alteracao do estado dentro do navegador
+                a alteraca o n ocorre diretamente no input, mas primeiramente em setCodigo 
+                */}
+                <input type="number" value={codigo} onChange={e => setCodigo(e.target.value)}/> 
+                <button onClick={obterCliente}>Obter Cliente</button>
+            </div>
+            <ul>
+                <li>Código: {cliente.id}</li>
+                <li>Nome: {cliente.nome}</li>
+                <li>Idade: {cliente.idade}</li>
+            </ul>
+        </Layout>
+
+    )
+}
