@@ -1,0 +1,10 @@
+o next pre-renderiza as paginas por padrao
+    isso é bom para o search engines
+
+existem dois modelos de pre-renderizacao:
+    1. Static Site Generation (SSG) => o servidor gera uma pagina HTML em um determinado periodo de tempo
+    e a serve para todas as requisicoes do cliente
+
+    2. Server-side Rendering (SSR) => para cada requisicao, o servidor monta um html especifico para o chamado
+    
+     
