@@ -16,7 +16,7 @@ export default function Integracao() {
     } */
 
     async function obterCliente() {
-        const resp = await fetch(`http://localhost:3000/api/clientes/${codigo}`)
+        const resp = await fetch(`/api/clientes/${codigo}`)
         const dados = await resp.json()
         setCliente(dados)
     }
